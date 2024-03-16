@@ -199,7 +199,7 @@ if selected == "Explore Data":
         db="defaultdb",
         host=HOST,
         password=PASSWD,
-        port=PORT,
+        port=int(PORT),
         user=USER
         )
     cur = Qconnection.cursor()
