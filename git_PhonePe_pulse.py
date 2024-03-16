@@ -294,7 +294,7 @@ if selected == "Explore Data":
             df10["Total payment value"] = df10["Total payment value"].apply(lambda x: format_currency(x/10000000))
             # st.dataframe(df10)
 
-            india_states = json.load(open("IITB India/states_india.geojson", "r"))
+            india_states = json.load(open("states_india.geojson", "r"))
             # map_state_names = []
             # for i in range(36):
             #     map_state_names.append(india_states["features"][i]["properties"]["st_nm"])
@@ -482,7 +482,7 @@ if selected == "Explore Data":
                 Registered_users = 0
                 App_opens = 0
 
-            india_states = json.load(open("IITB India/states_india.geojson", "r"))
+            india_states = json.load(open("states_india.geojson", "r"))
             # map geojson and dataframe using an id
             state_id_map = {}
             for feature in india_states["features"]:
