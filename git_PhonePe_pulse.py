@@ -11,7 +11,7 @@ HOST = os.environ["host"]
 USER  = os.environ["user"]
 PASSWD = os.environ["passwd"]
 
-st.write(HOST)
+st.write(type(HOST))
 st.write(USER)
 st.write(PASSWD)
 
