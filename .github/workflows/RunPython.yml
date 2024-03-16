@@ -1,0 +1,4 @@
+env:
+  host: ${{ secrets.HOST}}
+  passwd: ${{ secrets.PASSWD}}
+  user: ${{ secrets.USER}}
