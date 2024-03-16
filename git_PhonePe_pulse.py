@@ -11,10 +11,6 @@ HOST = os.environ["host"]
 USER  = os.environ["user"]
 PASSWD = os.environ["passwd"]
 
-st.write(type(HOST))
-st.write(USER)
-st.write(PASSWD)
-
 # Streamlit Page Configuration
 st.set_page_config(
     page_title = "PhonePe Pulse Data",
