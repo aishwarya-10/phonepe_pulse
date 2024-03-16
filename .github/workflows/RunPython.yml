@@ -13,5 +13,5 @@ jobs:
         run: |
           touch .env
           echo host=${{ secrets.HOST }} >> .env
-          echo passwd: ${{ secrets.PASSWD}} >> .env
-          echo user: ${{ secrets.USER}} >> .env
+          echo passwd=${{ secrets.PASSWD}} >> .env
+          echo user=${{ secrets.USER}} >> .env
