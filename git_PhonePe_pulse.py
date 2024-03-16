@@ -193,9 +193,9 @@ if selected == "Explore Data":
 
     # SQL Query
     Qconnection = pymysql.connect(
-        host = f'{HOST}',
-        user=f'{USER}',
-        passwd=f'{PASSWD}',
+        host = HOST,
+        user = USER,
+        passwd = PASSWD,
         database = "phonepe_db"
         )
     cur = Qconnection.cursor()
