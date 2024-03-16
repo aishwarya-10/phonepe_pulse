@@ -1,4 +1,17 @@
-env:
-  host: ${{ secrets.HOST}}
-  passwd: ${{ secrets.PASSWD}}
-  user: ${{ secrets.USER}}
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Creating env file
+        run: |
+          touch .env
+          echo host=${{ secrets.HOST }} >> .env
+          echo passwd: ${{ secrets.PASSWD}} >> .env
+          echo user: ${{ secrets.USER}} >> .env
