@@ -10,6 +10,7 @@ import os
 HOST = os.environ["host"]
 USER  = os.environ["user"]
 PASSWD = os.environ["passwd"]
+PORT = os.environ["port"]
 
 # Streamlit Page Configuration
 st.set_page_config(
@@ -193,10 +194,13 @@ if selected == "Explore Data":
 
     # SQL Query
     Qconnection = pymysql.connect(
-        host = HOST,
-        user = USER,
-        passwd = PASSWD,
-        database = "phonepe_db"
+        charset="utf8mb4",
+        cursorclass=pymysql.cursors.DictCursor,
+        db="defaultdb",
+        host=HOST,
+        password=PASSWD,
+        port=PORT,
+        user=USER
         )
     cur = Qconnection.cursor()
 
