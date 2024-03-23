@@ -197,14 +197,19 @@ df_Top_Users.to_sql('Top_Users', connection, if_exists='replace')
 if selected == "Explore Data":
     st.write("") # empty space
     st.header("Explore Data")
-    # A short story on the section
-    st.write("""Tapping fingers impatiently as the massive PhonePe Pulse dataset finished downloading.
-                **PhonePe Pulse**, a teasure trove of anonymized user transaction, insurance data has promised 
-                valuable insights into India's booming digital payments landscape. The first hurdle of 
-                data cleaning of endless spreadsheet led to a visualization in a **kaleidoscope of colors**.
-                """)
-    col1, col2 = st.columns((6,4))
+    col1, col2 = st.columns((8,2))
+    with col1:           
+        # Column 1: A short story on the section
+        st.write("""Tapping fingers impatiently as the massive PhonePe Pulse dataset finished downloading.
+                    **PhonePe Pulse**, a teasure trove of anonymized user transaction, insurance data has promised 
+                    valuable insights into India's booming digital payments landscape. The first hurdle of 
+                    data cleaning of endless spreadsheet led to a visualization in a **kaleidoscope of colors**.
+                    """)
+    with col2:
+        # Column 2: Data availability
+        st.write("Data available till Dec-2023")
 
+    col1, col2 = st.columns((6,4))
     with col1:
         # Column 1: Title
         st.header("All India")
