@@ -1,7 +1,8 @@
 **PhonePe Pulse Data Exploration Project with Streamlit, PyMySQL, and Pandas**
 
 This project provides a user-friendly, interactive dashboard for exploring PhonePe Pulse data using Python libraries: Streamlit, PyMySQL, and Pandas.
-
+https://phonepe-pulse-guvi.streamlit.app/ 
+https://www.phonepe.com/pulse/explore/transaction/2023/4/
 
 **Prerequisites:**
 - Python 3.x (https://www.python.org/downloads/)
