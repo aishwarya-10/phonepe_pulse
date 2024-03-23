@@ -4,6 +4,8 @@ This project provides a user-friendly, interactive dashboard for exploring Phone
 https://phonepe-pulse-guvi.streamlit.app/ 
 https://www.phonepe.com/pulse/explore/transaction/2023/4/
 
+https://www.linkedin.com/posts/aishwarya-velmurugan_hi-everyone-im-excited-to-share-my-latest-activity-7177355823961051136-r7Uz?utm_source=share&utm_medium=member_desktop
+
 **Prerequisites:**
 - Python 3.x (https://www.python.org/downloads/)
 - Streamlit (pip install streamlit)
