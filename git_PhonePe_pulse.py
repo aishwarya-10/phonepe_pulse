@@ -516,7 +516,20 @@ if selected == "Explore Data":
                             hoverlabel_font={'size': 18})
             fig.update_geos(fitbounds = "locations", visible = False,)
             st.plotly_chart(fig, use_container_width=True)
-
+            
+            with st.expander("Fun Facts"):
+                Ecol1, Ecol2 = st.columns(2)
+                with Ecol1:
+                    container1 = st.container(border=True)
+                    container1.write("""Maharashtra's PhonePe users with Xiaomi phones could create a human chain stretching 
+                                     for over 1,134 kilometers – that's almost the distance from Mumbai to Delhi!""")
+                    
+                with Ecol2:
+                    container2 = st.container(border=True)
+                    container2.write("""PhonePe transactions in Maharashtra during Q4 2023 (₹70,786.27 billion) helped save millions of trees!
+                                      Since most transactions are digital, there's less need for paper receipts
+                                     """)
+                    
         with col2:
             # Insights of User
             st.header("Users")
