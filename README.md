@@ -70,7 +70,7 @@ The generated data is stored as .csv in the file location.
 Agg_Trans.to_csv("Agg_Trans.csv", encoding='utf-8', index=False)
 ```
 Similarly, Aggregated-Users, Map-transaction, Map-users, top-transaction, and top-users were generated and stored as a .csv file.
-<br>
+ <br>
 
 ## Step 4: EDA-Exploratory Data Analysis
 The data is explored and visualized for any null values in the data frame. 
