@@ -32,7 +32,7 @@ Clone the pulse data repository using VS-Code:
 ```python
 git clone https://github.com/PhonePe/pulse.git
 ```
- <br>  
+<br>  
 
 ## Step 3: Data transformation
 The pulse data is broken down state-wise, year-wise, and quarter-wise in a JSON file. The data is transformed into column-wise records of the data frame using the PANDAS library.
