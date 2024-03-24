@@ -12,6 +12,20 @@ This project provides a user-friendly, interactive dashboard for exploring Phone
 
 # PhonePe-Pulse
 PhonePe Pulse is a data product offered by PhonePe, a leading digital payments platform in India. It provides insights and trends based on anonymized and aggregated transaction data collected through the PhonePe app.   
+
+
+This data has been structured to provide details of the following three sections with data cuts on Transactions, Users, and Insurance of PhonePe Pulse - Explore tab.
+
+**Aggregated** - Aggregated values of various payment categories as shown under the Categories section
+
+
+**Map** - Total values at the State and District levels.
+
+
+**Top** - Totals of top States / Districts /Pin Codes
+
+
+All the data provided in these folders is in JSON format.
 <br>
 
 # Workflow
