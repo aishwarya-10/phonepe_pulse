@@ -1,31 +1,95 @@
-**PhonePe Pulse Data Exploration Project with Streamlit, PyMySQL, and Pandas**
-
+# PhonePe Pulse Data Exploration Project with Streamlit, PyMySQL, and Pandas
 This project provides a user-friendly, interactive dashboard for exploring PhonePe Pulse data using Python libraries: Streamlit, PyMySQL, and Pandas.
-https://phonepe-pulse-guvi.streamlit.app/ 
-https://www.phonepe.com/pulse/explore/transaction/2023/4/
 
-https://www.linkedin.com/posts/aishwarya-velmurugan_hi-everyone-im-excited-to-share-my-latest-activity-7177355823961051136-r7Uz?utm_source=share&utm_medium=member_desktop
+**View App:** https://phonepe-pulse-guvi.streamlit.app/ 
+**Data:** https://github.com/PhonePe/pulse.git
+**Reference:** https://www.phonepe.com/pulse/explore/transaction/2023/4/
+**Demo:** https://www.linkedin.com/posts/aishwarya-velmurugan_hi-everyone-im-excited-to-share-my-latest-activity-7177355823961051136-r7Uz?utm_source=share&utm_medium=member_desktop
 
-**Prerequisites:**
+
+# PhonePe-Pulse
+PhonePe Pulse is a data product offered by PhonePe, a leading digital payments platform in India. It provides insights and trends based on anonymized and aggregated transaction data collected through the PhonePe app.
+
+
+# Workflow
+## Step 1: Prerequisites
+Install and Import the following libraries
 - Python 3.x (https://www.python.org/downloads/)
 - Streamlit (pip install streamlit)
-- PyMySQL (pip install pymysql)
+- Streamlit option menu (pip install streamlit-option-menu)
+- sqlite3 (pip install db-sqlite3)
 - Pandas (pip install pandas)
-- MySQL database server (https://dev.mysql.com/doc/mysql/en/installing.html)
+- json (pip install jsons)
 
 
-**Clone this repository:**
-- git clone https://github.com/your-username/phonepe-pulse-exploration.git
-- Replace your-username with your GitHub username.
+## Step 2: Clone this repository
+Clone the pulse data repository using VS-Code:
+- Open a new VS-Code window.
+- Open the terminal and enter
+```
+git clone https://github.com/PhonePe/pulse.git
+```
 
 
-**Create a MySQL database and user:**
-- Follow your MySQL server's instructions for creating a database and user with appropriate access privileges.
-- Update config.py with your database credentials (hostname, username, password, database name).
-- Installing visualization libraries like Plotly (pip install plotly) or Matplotlib (pip install matplotlib) for more advanced visualizations.
+## Step 3: Data transformation
+The pulse data is broken down state-wise, year-wise, and quarter-wise in a JSON file. The data is transaformed into column-wise records of the data frame using the PANDAS library.
+```
+# Aggregated-Transaction
+path = "pulse/data/aggregated/transaction/country/india/state/"
+Agg_state_list = os.listdir(path)
+clm={'State':[], 'Year':[],'Quater':[],'Transaction_type':[], 'Transaction_count':[], 'Transaction_amount':[]}
+
+for i in Agg_state_list:
+    p_i = path + i + "/"
+    Agg_yr_list = os.listdir(p_i)
+    for j in Agg_yr_list:
+        p_j = p_i + j + "/"
+        Agg_Q_list = os.listdir(p_j)
+        for k in Agg_Q_list:
+            p_k = p_j + k
+            Data = open(p_k,'r')
+            D = json.load(Data)
+            for z in D['data']['transactionData']:
+                Name = z['name']
+                count = z['paymentInstruments'][0]['count']
+                amount = z['paymentInstruments'][0]['amount']
+                clm['Transaction_type'].append(Name)
+                clm['Transaction_count'].append(count)
+                clm['Transaction_amount'].append(amount)
+                clm['State'].append(i)
+                clm['Year'].append(j)
+                clm['Quater'].append(int(k.strip('.json')))
+#Succesfully created a dataframe
+Agg_Trans = pd.DataFrame(clm)
+```
+The generated data is stored as .csv in the file location.
+```
+Agg_Trans.to_csv("Agg_Trans.csv", encoding='utf-8', index=False)
+```
+Similarly Aggregated-Users, Map-transaction, Map-users, top-transaction, and top-users were generated and stored as .csv file.
 
 
-**Using the Dashboard:**
+## Step 4: EDA-Exploratory Data Analysis
+The data is explored and visualized for any null values in the data frame. 
+```
+Agg_Trans.isnull().sum()
+```
+
+
+## Step 5: SQL Database
+To ensure independent operation on a cloud platform, the application stores generated data at End-of-Day (EOD) within a lightweight, file-based SQLite3 database. This approach eliminates the need for developers to rely on local host SQL credentials and simplifies deployment.
+```
+# Connect to SQL DB
+connection = sqlite3.connect("PhonePe_pulse.db")
+cur = connection.cursor()
+# Load Data
+df_Agg_Trans = pd.read_csv("Data/Agg_Trans.csv")
+# Inserting each DF to SQL server:
+df_Agg_Trans.to_sql('Agg_Trans', connection, if_exists='replace')
+```
+
+
+## Step 6: Streamlit Dashboard
 - The dashboard provides various interactive filters and charts to explore PhonePe Pulse data.
 - Specific functionalities will depend on the data structure and your desired insights. However, common features might include:
 - Date range selection: Allow users to filter data by specific date ranges.
