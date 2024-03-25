@@ -3,7 +3,7 @@ This project provides a user-friendly, interactive dashboard for exploring Phone
 
 [**Click here to view the app**](https://phonepe-pulse-guvi.streamlit.app/) 
 
-[**Project Demo:**](https://www.linkedin.com/posts/aishwarya-velmurugan_hi-everyone-im-excited-to-share-my-latest-activity-7177355823961051136-r7Uz?utm_source=share&utm_medium=member_desktop)
+[**Project Demo**](https://www.linkedin.com/posts/aishwarya-velmurugan_hi-everyone-im-excited-to-share-my-latest-activity-7177355823961051136-r7Uz?utm_source=share&utm_medium=member_desktop)
 <br>
 
 # PhonePe-Pulse
@@ -120,6 +120,6 @@ Type pipreqs in the terminal to create the requirements.txt
 - In the deploy an app screen, paste the "**GitHub link**".
 
 # Reference
-[**Data**](https://github.com/PhonePe/pulse.git)
+[**Pulse Data**](https://github.com/PhonePe/pulse.git)
 
-[**UI**](https://www.phonepe.com/pulse/explore/transaction/2023/4/)   
+[**Web UI**](https://www.phonepe.com/pulse/explore/transaction/2023/4/)   
