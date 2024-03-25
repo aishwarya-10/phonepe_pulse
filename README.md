@@ -1,13 +1,9 @@
 # PhonePe Pulse Data Exploration Project with Streamlit, SQL, and Pandas
 This project provides a user-friendly, interactive dashboard for exploring PhonePe Pulse data using Python libraries: Streamlit, SQLite, and Pandas.
 
-**View App:** https://phonepe-pulse-guvi.streamlit.app/ 
+[**Click here to view the app**](https://phonepe-pulse-guvi.streamlit.app/) 
 
-**Demo:** https://www.linkedin.com/posts/aishwarya-velmurugan_hi-everyone-im-excited-to-share-my-latest-activity-7177355823961051136-r7Uz?utm_source=share&utm_medium=member_desktop
-
-**Data:** https://github.com/PhonePe/pulse.git
-
-**Reference:** https://www.phonepe.com/pulse/explore/transaction/2023/4/   
+[**Project Demo:**](https://www.linkedin.com/posts/aishwarya-velmurugan_hi-everyone-im-excited-to-share-my-latest-activity-7177355823961051136-r7Uz?utm_source=share&utm_medium=member_desktop)
 <br>
 
 # PhonePe-Pulse
@@ -122,3 +118,8 @@ df_Agg_Trans.to_sql('Agg_Trans', connection, if_exists='replace')
 ```
 Type pipreqs in the terminal to create the requirements.txt
 - In the deploy an app screen, paste the "**GitHub link**".
+
+# Reference
+[**Data**](https://github.com/PhonePe/pulse.git)
+
+[**UI**](https://www.phonepe.com/pulse/explore/transaction/2023/4/)   
