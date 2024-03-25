@@ -4,6 +4,7 @@ This project provides a user-friendly, interactive dashboard for exploring Phone
 [**Click here to view the app**](https://phonepe-pulse-guvi.streamlit.app/) 
 
 [**Project Demo**](https://www.linkedin.com/posts/aishwarya-velmurugan_hi-everyone-im-excited-to-share-my-latest-activity-7177355823961051136-r7Uz?utm_source=share&utm_medium=member_desktop)
+
 <br>
 
 # PhonePe-Pulse
@@ -22,6 +23,7 @@ This data has been structured to provide details of the following three sections
 
 
 All the data provided in these folders is in JSON format.
+
 <br>
 
 # Workflow
@@ -79,8 +81,9 @@ The generated data is stored as .csv in the file location.
 ```python
 Agg_Trans.to_csv("Agg_Trans.csv", encoding='utf-8', index=False)
 ```
-Similarly, Aggregated-Users, Map-transaction, Map-users, top-transaction, and top-users were generated and stored as a .csv file.
- <br>
+- Similarly, Aggregated-Users, Map-transaction, Map-users, top-transaction, and top-users were generated and stored as a .csv file.
+
+ <br>  
 
 ## Step 4: EDA-Exploratory Data Analysis
 The data is explored and visualized for any null values in the data frame. 
@@ -118,6 +121,7 @@ df_Agg_Trans.to_sql('Agg_Trans', connection, if_exists='replace')
 ```
 Type pipreqs in the terminal to create the requirements.txt
 - In the deploy an app screen, paste the "**GitHub link**".
+<br>
 
 # Reference
 [**Pulse Data**](https://github.com/PhonePe/pulse.git)
